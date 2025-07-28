@@ -3,8 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-
   {
     'sindrets/diffview.nvim',
   },
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 }
