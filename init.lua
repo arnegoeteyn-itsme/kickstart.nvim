@@ -1030,3 +1030,6 @@ require('ufo').setup {
     return { 'treesitter', 'indent' }
   end,
 }
+
+-- copy instead of move new tabs
+vim.keymap.set('n', '<C-w>T', ':tab split<CR>')
