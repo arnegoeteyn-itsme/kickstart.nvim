@@ -414,7 +414,10 @@ require('lazy').setup({
             i = { ['<c-d>'] = actions.delete_buffer },
           },
         },
-        -- pickers = {}
+        pickers = {
+          find_files = { hidden = true },
+          buffers = { sort_mru = true },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
