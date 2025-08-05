@@ -840,7 +840,7 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -1038,3 +1038,5 @@ require('ufo').setup {
 
 -- copy instead of move new tabs
 vim.keymap.set('n', '<C-w>T', ':tab split<CR>')
+
+vim.api.nvim_create_user_command('BufOnly', '%bd|e#|bd#', {})
