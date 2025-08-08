@@ -1031,3 +1031,14 @@ require('lazy').setup({
 vim.keymap.set('n', '<C-w>T', ':tab split<CR>')
 
 vim.api.nvim_create_user_command('BufOnly', '%bd|e#|bd#', {})
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+
+  pattern = '*.go',
+
+  callback = function()
+    pcall(function()
+      vim.lsp.buf.code_action { context = { only = { 'source.organizeImports' }, diagnostics = {} }, apply = true }
+    end)
+  end,
+})
